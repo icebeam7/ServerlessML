@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ServerlessML.Mobile.Views.TaxiTripView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:ServerlessML.Mobile.ViewModels">
+
+    <ContentPage.BindingContext>
+        <vm:TaxiTripViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <ScrollView Margin="10">
+            <StackLayout Spacing="10">
+                <Label Style="{StaticResource tripLabel}" Text="Vendor Id" />
+                <Entry Style="{StaticResource tripEntry}" Text="{Binding TaxiTrip.VendorId}" />
+
+                <Label Style="{StaticResource tripLabel}" Text="Rate Code" />
+                <Entry Style="{StaticResource tripEntry}" Text="{Binding TaxiTrip.RateCode}" />
+
+                <Label Style="{StaticResource tripLabel}" Text="Passenger Count" />
+                <Entry Style="{StaticResource tripEntry}" Text="{Binding TaxiTrip.PassengerCount}" />
+
+                <Label Style="{StaticResource tripLabel}" Text="Trip Time" />
+                <Entry Style="{StaticResource tripEntry}" Text="{Binding TaxiTrip.TripTime}" />
+
+                <Label Style="{StaticResource tripLabel}" Text="Trip Distance" />
+                <Entry Style="{StaticResource tripEntry}" Text="{Binding TaxiTrip.TripDistance}" />
+
+                <Label Style="{StaticResource tripLabel}" Text="Payment Type" />
+                <Entry Style="{StaticResource tripEntry}" Text="{Binding TaxiTrip.PaymentType}" />
+
+                <Button
+                    Command="{Binding PredictCommand}"
+                    Style="{StaticResource tripButton}"
+                    Text="Predict" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
